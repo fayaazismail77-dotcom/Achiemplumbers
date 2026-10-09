@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Achiemplumbers | Plumbing, Electrical and Tile Cleaning in Johannesburg</title>
+<meta name="description" content="Plumbing, electrical and tile cleaning services in Johannesburg. 146 Albert St, Johannesburg, 2001.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marine:#0C2B3A; --marine-2:#123F54; --water:#3FA3C7; --copper:#C97B3E; --spark:#F2C230;
+  --bg:#EEF3F4; --ink:#0C2B3A; --muted:#4A6572; --panel:#FFFFFF; --line:#C9D8DD;
+  --display:'Bricolage Grotesque','Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'DM Sans','Segoe UI',Helvetica,Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081C27;--ink:#E8F0F2;--muted:#9DB5BF;--panel:#0F2E3D;--line:#1D4558}}
+:root[data-theme="dark"]{--bg:#081C27;--ink:#E8F0F2;--muted:#9DB5BF;--panel:#0F2E3D;--line:#1D4558}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-.02em}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--marine);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:26px;height:26px;border-radius:5px;background:var(--copper);display:grid;place-items:center}
+.brand i::after{content:"";width:10px;height:10px;background:var(--marine);border-radius:2px}
+nav a{color:#CFE0E6;text-decoration:none;margin-left:26px;font-weight:500;font-size:15px}
+nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--spark);color:#0C2B3A!important;font-weight:700;padding:14px 26px;border-radius:8px;text-decoration:none;font-size:16px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+nav .btn{padding:10px 18px;margin-left:26px;font-size:15px}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{background:var(--marine);color:#fff;padding:72px 0 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(42px,6.4vw,76px);font-weight:800}
+.hero p{color:#BFD3DB;font-size:19px;max-width:30em;margin:24px 0 32px}
+.hero .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.ghost{color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:5px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;aspect-ratio:1;max-width:460px;width:100%;margin-left:auto}
+.tile{border-radius:8px;background:var(--marine-2);display:grid;place-items:center;opacity:0;animation:lay .5s ease-out forwards;animation-delay:calc(var(--i)*55ms + 150ms)}
+.tile svg{width:46%;height:46%}
+.t-water{background:var(--water)} .t-spark{background:var(--spark)} .t-clean{background:var(--copper)}
+.tile.alt{background:#175069}
+.tile.scene{grid-column:2/5;grid-row:3/5;background:none;overflow:hidden}
+.tile.scene svg{width:100%;height:100%}
+.fix-tile{animation:drop 4.5s ease-in-out infinite}
+.fix-arm{transform-origin:208px 136px;animation:tap 4.5s ease-in-out infinite}
+.fix-spark{transform-origin:288px 171px;opacity:0;animation:pop 4.5s ease-out infinite}
+@keyframes drop{0%{transform:translateY(-100px);opacity:0}12%{opacity:1}40%{transform:translateY(0)}50%{transform:translateY(-4px)}56%,86%{transform:translateY(0);opacity:1}96%,100%{transform:translateY(0);opacity:0}}
+@keyframes tap{0%,40%{transform:rotate(-18deg)}46%{transform:rotate(6deg)}52%{transform:rotate(-8deg)}58%{transform:rotate(6deg)}64%{transform:rotate(-8deg)}70%{transform:rotate(6deg)}78%,100%{transform:rotate(-18deg)}}
+@keyframes pop{0%,44%{opacity:0;transform:scale(.2)}50%{opacity:1;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.3)}}
+@media(prefers-reduced-motion:reduce){.fix-tile,.fix-arm,.fix-spark{animation:none}}
+@keyframes lay{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.tile{animation:none;opacity:1}html{scroll-behavior:auto}.btn{transition:none}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.tiles{margin:0;max-width:360px}}
+
+/* sections */
+section{padding:88px 0}
+.head{max-width:620px;margin-bottom:48px}
+.head h2{font-size:clamp(32px,4.4vw,50px);font-weight:800}
+.head p{color:var(--muted);margin:16px 0 0}
+
+/* services */
+.svc{display:grid;grid-template-columns:260px 1fr 1fr;gap:32px;align-items:start;padding:36px 0;border-top:2px solid var(--line)}
+.svc:last-child{border-bottom:2px solid var(--line)}
+.art{width:100%;height:auto;display:block;border-radius:14px}
+.svc h3{font-size:32px;font-weight:700}
+.svc p{margin:10px 0 0;color:var(--muted)}
+.svc ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.svc li{padding-left:26px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:3px;background:var(--c)}
+@media(max-width:820px){.svc{grid-template-columns:1fr;gap:18px}.art{max-width:320px}}
+
+/* process */
+.process{background:var(--marine);color:#fff}
+.process .head p{color:#BFD3DB}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{padding:0 24px 0 0;border-top:3px solid var(--copper);padding-top:22px;counter-increment:s}
+.step::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:46px;color:var(--spark);display:block;line-height:1;margin-bottom:12px}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{margin:0;color:#BFD3DB;font-size:16px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact h2{font-size:clamp(34px,5vw,56px);font-weight:800}
+.contact .lede{color:var(--muted);margin:18px 0 28px;max-width:28em}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:32px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card address{font-style:normal;font-size:20px;line-height:1.5;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.chip{border:2px solid var(--line);border-radius:999px;padding:7px 16px;font-weight:500;font-size:15px}
+@media(max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.rev{margin:0;padding:28px 0;border-top:2px solid var(--line)}
+.rev p{margin:0 0 14px;font-size:19px;line-height:1.55}
+.rev.long{grid-column:1/-1}
+.rev.long p{font-size:17px;color:var(--muted);max-width:60em}
+.rev cite{font-style:normal;font-weight:700;font-family:var(--display);font-size:17px}
+.rev span{color:var(--muted);font-size:15px;margin-left:8px}
+@media(max-width:820px){.reviews{grid-template-columns:1fr}}
+footer{background:var(--marine);color:#9DB5BF;padding:32px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* polish */
+.hero{position:relative;padding:80px 0 130px;clip-path:polygon(0 0,100% 0,100% 90%,0 100%);background:radial-gradient(800px 480px at 88% 25%,#1D6283 0%,transparent 65%),var(--marine)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(46px,7vw,88px)}
+.tiles{filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+.strip{position:relative;z-index:2;margin-top:-70px;background:var(--panel);border:2px solid var(--line);border-radius:18px;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 20px 50px rgba(12,43,58,.18)}
+.strip div{padding:26px 28px;border-left:2px solid var(--line)}
+.strip div:first-child{border-left:0}
+.strip b{display:block;font-family:var(--display);font-size:22px;line-height:1.2}
+.strip span{color:var(--muted);font-size:15px}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip div{border-left:0;border-top:2px solid var(--line)}.strip div:first-child{border-top:0}}
+#services{padding-top:96px}
+.svc{transition:background .2s}
+.svc .art{box-shadow:0 14px 30px rgba(12,43,58,.22);transition:transform .25s}
+.svc:hover .art{transform:rotate(-1.5deg) scale(1.02)}
+.svc h3{font-size:38px}
+.svc.flip{grid-template-columns:1fr 1fr 260px}
+.svc.flip .art{order:3}
+@media(max-width:820px){.svc.flip{grid-template-columns:1fr}.svc.flip .art{order:0}}
+#reviews{background:var(--panel)}
+.rev:not(.long)::before{content:"\201C";display:block;font-family:var(--display);font-weight:800;font-size:72px;line-height:.7;color:var(--copper);margin-bottom:6px}
+.contact{background:var(--spark);color:#0C2B3A}
+.contact .lede{color:#2A4F5F}
+.contact .btn{background:#0C2B3A;color:#fff!important}
+.card{color:var(--ink);box-shadow:0 20px 40px rgba(12,43,58,.2);border-color:transparent}
+.bigtel{display:block;font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,54px);letter-spacing:-.02em;margin:0 0 22px;text-decoration:none}
+.callfab{display:none}
+@media(max-width:760px){.msgfab{right:auto!important;left:16px}.callfab{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--copper);color:#0C2B3A;font-weight:700;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.35)}}
+@media(prefers-reduced-motion:reduce){.svc .art{transition:none}.svc:hover .art{transform:none}}
+
+/* animated background */
+.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.f{position:absolute;aspect-ratio:1;animation-duration:var(--d,8s);animation-delay:var(--l,0s);animation-iteration-count:infinite;animation-timing-function:linear}
+.drop{top:0;fill:var(--water);opacity:0;animation-name:fall}
+.bolt{fill:var(--spark);opacity:0;animation-name:flick;animation-timing-function:steps(1,end)}
+.twk{fill:var(--spark);opacity:.1;animation-name:twk;animation-timing-function:ease-in-out;animation-direction:alternate}
+.sq{background:var(--copper);border-radius:6px;opacity:.18;animation-name:drift;animation-timing-function:ease-in-out;animation-direction:alternate}
+@keyframes fall{0%{transform:translateY(-8vh);opacity:0}12%{opacity:.45}85%{opacity:.3}100%{transform:translateY(88vh);opacity:0}}
+@keyframes flick{0%,100%{opacity:0}6%{opacity:.5}9%{opacity:.08}13%{opacity:.45}20%{opacity:0}}
+@keyframes twk{from{transform:scale(.5);opacity:.08}to{transform:scale(1.1);opacity:.7}}
+@keyframes drift{from{transform:translateY(0) rotate(0)}to{transform:translateY(-36px) rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){.fx{display:none}}
+
+/* animated illustrations */
+.fb{transform-box:fill-box;transform-origin:center}
+.p-drop{animation:dfall 1.8s ease-in infinite}
+.p-late{animation-delay:.9s}
+.wrench{transform-origin:205px 125px;animation:wob 2.4s ease-in-out infinite alternate}
+.e-bolt{animation:zap 2.2s ease-in-out infinite}
+.e-glow{animation:glow 2.2s ease-in-out infinite}
+.e-sparks{animation:sparks 1.4s steps(1,end) infinite}
+.t-sp{animation:tw 2.4s ease-in-out infinite alternate}
+.sponge{animation:swipe 3s ease-in-out infinite alternate}
+@keyframes dfall{0%{transform:translateY(-8px);opacity:0}25%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+@keyframes wob{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+@keyframes zap{0%,100%{transform:scale(1);opacity:1}45%{transform:scale(1.08);opacity:1}50%{opacity:.55}55%{transform:scale(1.12);opacity:1}}
+@keyframes glow{0%,100%{transform:scale(.9);opacity:.2}50%{transform:scale(1.15);opacity:.45}}
+@keyframes sparks{0%{opacity:1}30%{opacity:.15}60%{opacity:1}80%{opacity:0}}
+@keyframes tw{from{transform:scale(.6);opacity:.5}to{transform:scale(1.2);opacity:1}}
+@keyframes swipe{from{transform:translateX(-60px)}to{transform:translateX(60px)}}
+@media(prefers-reduced-motion:reduce){.a{animation:none!important}}
+
+/* animated worker */
+.process{position:relative;overflow:hidden}
+.process .wrap{position:relative;z-index:1}
+.worker{position:absolute;top:44px;right:max(24px,calc((100% - 1120px)/2 + 24px));width:280px;height:auto}
+.bob{animation:bob 1.2s ease-in-out infinite alternate}
+.wrench2{transform-origin:210px 187px;animation:ratchet 1.2s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(3px)}}
+@keyframes ratchet{from{transform:rotate(-24deg)}to{transform:rotate(14deg)}}
+@media(max-width:980px){.worker{position:relative;top:auto;right:auto;display:block;margin:0 auto 24px;width:min(260px,70%)}.process{padding-top:56px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Achiemplumbers home"><i></i>Achiemplumbers</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="d" viewBox="0 0 24 24"><path d="M12 2C9 7 5 10.500 5 15a7 7 0 0 0 14 0c0-4.500-4-8-7-13z"/></symbol><symbol id="b" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol><symbol id="s" viewBox="0 0 24 24"><path d="M12 2l2.200 6.800L21 11l-6.800 2.200L12 20l-2.200-6.800L3 11l6.800-2.200z"/></symbol></svg>
+  <div class="fx" aria-hidden="true">
+    <svg class="f drop" style="left:5%;width:18px;--d:8s;--l:-1s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:17%;width:24px;--d:11s;--l:-6s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:30%;width:16px;--d:9s;--l:-3s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:46%;width:20px;--d:12s;--l:-8s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:62%;width:26px;--d:10s;--l:-2s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:76%;width:18px;--d:8.5s;--l:-5s"><use href="#d"/></svg>
+    <svg class="f drop" style="left:90%;width:22px;--d:11s;--l:-9s"><use href="#d"/></svg>
+    <svg class="f bolt" style="left:10%;top:18%;width:46px;--d:6s;--l:-1s"><use href="#b"/></svg>
+    <svg class="f bolt" style="left:52%;top:8%;width:38px;--d:7s;--l:-4s"><use href="#b"/></svg>
+    <svg class="f bolt" style="left:93%;top:58%;width:52px;--d:5.5s;--l:-2s"><use href="#b"/></svg>
+    <svg class="f twk" style="left:25%;top:70%;width:26px;--d:3s;--l:-1s"><use href="#s"/></svg>
+    <svg class="f twk" style="left:68%;top:78%;width:20px;--d:4s;--l:-2s"><use href="#s"/></svg>
+    <svg class="f twk" style="left:40%;top:12%;width:18px;--d:3.5s;--l:-1s"><use href="#s"/></svg>
+    <svg class="f twk" style="left:84%;top:24%;width:24px;--d:4.5s;--l:0s"><use href="#s"/></svg>
+    <div class="f sq" style="left:3%;top:62%;width:44px;--d:9s;--l:-2s"></div>
+    <div class="f sq" style="left:35%;top:82%;width:30px;--d:11s;--l:-5s"></div>
+    <div class="f sq" style="left:58%;top:60%;width:56px;--d:13s;--l:-7s"></div>
+    <div class="f sq" style="left:80%;top:80%;width:34px;--d:10s;--l:-3s"></div>
+  </div>
+  <div class="wrap">
+    <div>
+      <h1>Pipes, power and spotless tiles. Sorted.</h1>
+      <p>Plumbing, electrical work and tile cleaning for homes and businesses across Johannesburg, all from one team you only have to brief once.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Get a quote</a>
+        <a class="ghost" href="tel:+27658703805">Call 065 870 3805</a>
+        <a class="ghost" href="https://wa.me/27658703805?text=Hi%20Achiemplumbers%2C%20I%20would%20like%20a%20quote%20for%3A%20" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+    </div>
+    <div class="tiles" aria-hidden="true">
+      <div class="tile alt" style="--i:0"></div>
+      <div class="tile" style="--i:1"></div>
+      <div class="tile t-water" style="--i:2"><svg viewBox="0 0 24 24" fill="#0C2B3A"><path d="M12 2C9 7 5 10.5 5 15a7 7 0 0 0 14 0c0-4.500-4-8-7-13z"/></svg></div>
+      <div class="tile alt" style="--i:3"></div>
+      <div class="tile" style="--i:4"></div>
+      <div class="tile alt" style="--i:5"></div>
+      <div class="tile" style="--i:6"></div>
+      <div class="tile t-spark" style="--i:7"><svg viewBox="0 0 24 24" fill="#0C2B3A"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+      <div class="tile t-clean" style="--i:8"><svg viewBox="0 0 24 24" fill="#0C2B3A"><path d="M12 2l2.200 6.800L21 11l-6.800 2.200L12 20l-2.200-6.800L3 11l6.800-2.200z"/></svg></div>
+      <div class="tile alt" style="--i:12"></div>
+      <div class="tile scene" style="--i:9"><svg viewBox="0 0 343 226" preserveAspectRatio="xMidYMid meet">
+        <rect x="117" y="0" width="109" height="109" rx="8" fill="#175069"/><rect x="234" y="0" width="109" height="109" rx="8" fill="#123F54"/>
+        <rect x="117" y="117" width="109" height="109" rx="8" fill="#123F54"/>
+        <rect x="234" y="117" width="109" height="109" rx="8" fill="#081C27"/>
+        <g class="fix-tile"><rect x="234" y="117" width="109" height="109" rx="8" fill="#C97B3E"/><rect x="244" y="127" width="89" height="89" rx="5" fill="none" stroke="#E8A86B" stroke-width="3" opacity=".7"/></g>
+        <path d="M190 172 L172 208 L130 210" stroke="#2B6C8C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="124" cy="211" r="8" fill="#8A5A2B"/>
+        <line x1="190" y1="172" x2="205" y2="128" stroke="#C97B3E" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="214" cy="106" r="14" fill="#E3A878"/>
+        <path d="M198 104 A16 16 0 0 1 230 104 Z" fill="#F2C230"/><rect x="196" y="102" width="38" height="5" rx="2" fill="#F2C230"/>
+        <g class="fix-arm"><line x1="208" y1="136" x2="250" y2="160" stroke="#C97B3E" stroke-width="11" stroke-linecap="round"/><circle cx="252" cy="161" r="6" fill="#E3A878"/><polygon points="254,158 284,150 287,159 257,168" fill="#D5DEE3"/></g>
+        <path class="fix-spark" d="M288 150 L293 166 L309 171 L293 176 L288 192 L283 176 L267 171 L283 166 Z" fill="#F2C230"/>
+      </svg></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap"><div class="strip">
+  <div><b>Open 24 hours</b><span>Call any time on 065 870 3805</span></div>
+  <div><b>One team, three trades</b><span>Plumbing, electrical and tile cleaning</span></div>
+  <div><b>Quote first</b><span>You see the price before work starts</span></div>
+</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>Three trades, one call</h2>
+      <p>Whatever is leaking, tripping or stained, you get one team and one quote.</p>
+    </div>
+
+    <div class="svc" style="--c:var(--water)">
+      <svg class="art" viewBox="0 0 260 200" role="img" aria-label="Copper pipe with a dripping tap and a wrench"><rect width="260" height="200" fill="#3FA3C7"/><circle cx="60" cy="150" r="70" fill="#fff" opacity=".12"/><rect x="0" y="50" width="140" height="28" fill="#C97B3E"/><rect x="112" y="50" width="28" height="92" fill="#C97B3E"/><rect x="96" y="44" width="9" height="40" rx="3" fill="#8F5526"/><rect x="40" y="44" width="9" height="40" rx="3" fill="#8F5526"/><rect x="104" y="138" width="36" height="14" rx="4" fill="#0C2B3A"/><path class="a fb p-drop" d="M126 164c-6 9-9 13-9 17a9 9 0 0 0 18 0c0-4-3-8-9-17z" fill="#fff"/><path class="a fb p-drop p-late" d="M126 186c-3 4-4 6-4 8a4 4 0 0 0 8 0c0-2-1-4-4-8z" fill="#fff"/><g transform="rotate(35 205 125)"><g class="a wrench"><rect x="197" y="95" width="16" height="92" rx="8" fill="#0C2B3A"/><circle cx="205" cy="92" r="22" fill="#0C2B3A"/><rect x="198" y="64" width="14" height="26" fill="#3FA3C7"/></g></g></svg>
+      <div><h3>Plumbing</h3><p>Fixing what leaks, blocks or runs cold, and installing what you need next.</p></div>
+      <ul><li>Leaks and burst pipes</li><li>Blocked drains and toilets</li><li>Geysers and hot water</li><li>Taps, basins and bathroom fittings</li></ul>
+    </div>
+
+    <div class="svc flip" style="--c:var(--spark)">
+      <svg class="art" viewBox="0 0 260 200" role="img" aria-label="Electrical plug with a lightning bolt"><rect width="260" height="200" fill="#F2C230"/><circle class="a fb e-glow" cx="200" cy="40" r="60" fill="#fff" opacity=".25"/><path d="M135 150c0 38 70 6 70 44" fill="none" stroke="#0C2B3A" stroke-width="12" stroke-linecap="round"/><rect x="85" y="72" width="100" height="82" rx="16" fill="#0C2B3A"/><rect x="108" y="38" width="13" height="38" rx="3" fill="#fff"/><rect x="149" y="38" width="13" height="38" rx="3" fill="#fff"/><rect x="118" y="96" width="34" height="8" rx="4" fill="#F2C230"/><polygon class="a fb e-bolt" points="218,20 186,78 208,78 196,118 236,58 212,58" fill="#fff" stroke="#0C2B3A" stroke-width="5" stroke-linejoin="round"/><path class="a e-sparks" d="M40 60l-18-8M38 100l-22 4M50 132l-16 14" stroke="#0C2B3A" stroke-width="6" stroke-linecap="round"/></svg>
+      <div><h3>Electrical</h3><p>Safe, tidy electrical work that gets the lights, plugs and power back where they belong.</p></div>
+      <ul><li>Fault finding and repairs</li><li>Plugs, switches and lighting</li><li>Distribution board work</li><li>New installations and extra points</li></ul>
+    </div>
+
+    <div class="svc" style="--c:var(--copper)">
+      <svg class="art" viewBox="0 0 260 200" role="img" aria-label="Tile floor half dirty and half clean with sparkles"><rect width="260" height="200" fill="#C97B3E"/><g fill="#9A5E31"><rect x="8" y="14" width="44" height="44" rx="4"/><rect x="58" y="14" width="44" height="44" rx="4"/><rect x="8" y="64" width="44" height="44" rx="4"/><rect x="58" y="64" width="44" height="44" rx="4"/><rect x="8" y="114" width="44" height="44" rx="4"/><rect x="58" y="114" width="44" height="44" rx="4"/></g><g fill="#F3F6F7"><rect x="108" y="14" width="44" height="44" rx="4"/><rect x="158" y="14" width="44" height="44" rx="4"/><rect x="208" y="14" width="44" height="44" rx="4"/><rect x="108" y="64" width="44" height="44" rx="4"/><rect x="158" y="64" width="44" height="44" rx="4"/><rect x="208" y="64" width="44" height="44" rx="4"/><rect x="108" y="114" width="44" height="44" rx="4"/><rect x="158" y="114" width="44" height="44" rx="4"/><rect x="208" y="114" width="44" height="44" rx="4"/></g><g fill="#F2C230"><path class="a fb t-sp" d="M180 26l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/><path class="a fb t-sp" style="animation-delay:-.8s" d="M130 82l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/><path class="a fb t-sp" style="animation-delay:-1.6s" d="M228 118l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></g><g class="a sponge"><rect x="70" y="166" width="120" height="24" rx="8" fill="#F2C230"/><rect x="70" y="180" width="120" height="10" rx="5" fill="#0C2B3A" opacity=".18"/></g></svg>
+      <div><h3>Tile cleaning</h3><p>Deep cleaning that lifts ground-in dirt from floors, walls and grout.</p></div>
+      <ul><li>Floor and wall tiles</li><li>Grout cleaning</li><li>Kitchens, bathrooms and patios</li><li>Homes, offices and shops</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <svg class="worker" viewBox="0 0 320 260" role="img" aria-label="Animated plumber tightening a pipe fitting with a wrench">
+  <rect x="0" y="236" width="320" height="8" rx="4" fill="#fff" opacity=".22"/>
+  <rect x="120" y="176" width="200" height="22" rx="4" fill="#C97B3E"/>
+  <rect x="196" y="166" width="28" height="42" rx="6" fill="#8F5526"/>
+  <circle cx="210" cy="187" r="9" fill="#C97B3E"/>
+  <path class="a fb p-drop" d="M232 204c-4 6-6 9-6 12a6 6 0 0 0 12 0c0-3-2-6-6-12z" fill="#3FA3C7"/>
+  <g class="a bob">
+    <rect x="70" y="214" width="76" height="22" rx="11" fill="#1B5B78"/>
+    <rect x="78" y="168" width="28" height="64" rx="14" fill="#1B5B78"/>
+    <rect x="56" y="224" width="26" height="12" rx="6" fill="#0C2B3A"/>
+    <rect x="68" y="100" width="52" height="86" rx="20" fill="#3FA3C7" transform="rotate(8 94 180)"/>
+    <rect x="86" y="128" width="26" height="20" rx="4" fill="#2F8FB0" transform="rotate(8 94 180)"/>
+    <circle cx="104" cy="78" r="20" fill="#E3B28A"/>
+    <circle cx="112" cy="80" r="2.500" fill="#0C2B3A"/>
+    <path d="M80 76a24 24 0 0 1 48 0z" fill="#F2C230"/>
+    <rect x="76" y="74" width="60" height="7" rx="3.500" fill="#F2C230"/>
+    <path d="M112 122L206 186" stroke="#3FA3C7" stroke-width="16" stroke-linecap="round" fill="none"/>
+  </g>
+  <g class="a wrench2">
+    <rect x="205" y="108" width="10" height="80" rx="5" fill="#F3F6F7"/>
+    <circle cx="210" cy="187" r="15" fill="#F3F6F7"/>
+    <circle cx="210" cy="187" r="6" fill="#8F5526"/>
+  </g>
+  <circle cx="208" cy="186" r="9" fill="#E3B28A"/>
+</svg>
+  <div class="wrap">
+    <div class="head">
+      <h2>How it works</h2>
+      <p>Four steps, no surprises.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Tell us</h3><p>Describe the job. Photos help.</p></div>
+      <div class="step"><h3>Get a quote</h3><p>You see the price before any work starts.</p></div>
+      <div class="step"><h3>We do the work</h3><p>We arrive on the agreed day and get it done.</p></div>
+      <div class="step"><h3>Check together</h3><p>We walk through the result with you before we leave.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="head"><h2>Customer reviews</h2><p>What people who have used Achiemplumbers say.</p></div>
+    <div class="reviews">
+      <blockquote class="rev"><p>Very professional. Good feedback and stuck to their word. Quick and efficient...</p><cite>Justin D.</cite><span>2 years ago</span></blockquote>
+      <blockquote class="rev"><p>Great customer service , friendly staff.</p><cite>Desiree K.</cite><span>2 years ago</span></blockquote>
+      <blockquote class="rev"><p>Their services were very good, they came out to take a look, sent the quotes through and got the job done a few days later.<br>Thnks very much</p><cite>Ganief G.</cite><span>2 years ago</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <h2>Need something fixed or cleaned?</h2>
+      <p class="lede">Tell us what is wrong and we will come back with a clear quote.</p>
+      <a class="bigtel" href="tel:+27658703805">065 870 3805</a>
+      <p style="margin:0 0 22px"><a href="https://wa.me/27658703805?text=Hi%20Achiemplumbers%2C%20I%20would%20like%20a%20quote%20for%3A%20" target="_blank" rel="noopener" style="font-weight:700">Message us on WhatsApp</a></p>
+      <a class="btn" href="#contact" id="cta">Request a quote</a>
+    </div>
+    <div class="card">
+      <h3>Visit us</h3>
+      <address>Achiemplumbers<br>146 Albert St, City<br>Johannesburg, 2001</address>
+      <h3>Call or message</h3>
+      <address><a href="tel:+27658703805">065 870 3805</a></address>
+      <h3>Opening hours</h3>
+      <address>Open 24 hours</address>
+      <p style="margin:0 0 22px"><a href="https://www.google.com/maps/search/?api=1&query=Q3R4%2BW6%20Johannesburg" target="_blank" rel="noopener">Open in Google Maps</a></p>
+      <h3>We cover</h3>
+      <div class="chips"><span class="chip">Plumbing</span><span class="chip">Electrical</span><span class="chip">Tile cleaning</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Achiemplumbers</span>
+    <span>146 Albert St, Johannesburg, 2001</span>
+  </div>
+</footer>
+<a class="callfab" href="tel:+27658703805">Call now</a>
+<a class="callfab msgfab" href="https://wa.me/27658703805?text=Hi%20Achiemplumbers%2C%20I%20would%20like%20a%20quote%20for%3A%20" target="_blank" rel="noopener">Message us</a>
+<script>
+/* Add your details here and the quote buttons will call or WhatsApp you. */
+var CONFIG={phone:"+27658703805",whatsapp:"27658703805"};
+try{
+  document.getElementById("yr").textContent=new Date().getFullYear();
+  var cta=document.getElementById("cta");
+  if(CONFIG.whatsapp){cta.href="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent("Hi Achiemplumbers, I would like a quote for: ");}
+  else if(CONFIG.phone){cta.href="tel:"+CONFIG.phone;cta.textContent="Call for a quote";}
+}catch(e){}
+</script>
+</body>
+</html>
